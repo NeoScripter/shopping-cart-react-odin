@@ -1,5 +1,4 @@
 import React from "react";
-import data from "./Data";
 import Item from "./Item";
 import { useCart } from "../hooks/CartContext";
 
@@ -15,10 +14,13 @@ function Catalog() {
                 {cart.map((dessert) => (
                     <Item
                         key={dessert.id}
+                        id={dessert.id}
                         image={dessert.image}
                         title={dessert.title}
                         description={dessert.description}
                         price={dessert.price}
+                        qnt={dessert.quantity}
+                        updateItemQuantity={updateItemQuantity}
                     />
                 ))}
             </div>

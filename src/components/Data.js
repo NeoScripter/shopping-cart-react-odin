@@ -53,7 +53,7 @@ const data = [
         id: "item6",
         image: meringue,
         title: "Pie",
-        description: "Lemon Megingue Pie",
+        description: "Lemon Meringue Pie",
         price: "5.00",
         quantity: 0
     },

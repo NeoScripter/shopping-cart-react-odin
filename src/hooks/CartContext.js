@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useCallback } from 'react';
 import data from '../components/Data';
 
 const CartContext = createContext();
@@ -11,13 +11,33 @@ export const CartProvider = ({ children }) => {
   const updateItemQuantity = (itemId, newQuantity) => {
     setCart(prevCart => 
       prevCart.map(item =>
-        item.id === itemId ? { ...item, quantity: newQuantity } : item
+        item.id === itemId ? { ...item, quantity: item.quantity + newQuantity } : item
       )
     );
   };
 
+  const removeItemFromCart = (itemId) => {
+    setCart(prevCart => 
+      prevCart.map(item =>
+        item.id === itemId ? { ...item, quantity: 0 } : item
+      )
+    );
+  };
+
+  const extractAddedItems = useCallback(() => {
+    let totalItems = 0;
+    const addedItems = [];
+    for (let item of cart) {
+      if (item.quantity > 0) {
+        totalItems += item.quantity;
+        addedItems.push(item);
+      }
+    }
+    return [totalItems, addedItems];
+  }, [cart]);
+
   return (
-    <CartContext.Provider value={{ cart, setCart, updateItemQuantity }}>
+    <CartContext.Provider value={{ cart, setCart, updateItemQuantity, extractAddedItems, removeItemFromCart }}>
       {children}
     </CartContext.Provider>
   );
