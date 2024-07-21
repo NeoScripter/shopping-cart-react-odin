@@ -1,0 +1,41 @@
+@font-face {
+    font-family: "Regular";
+    src: url(../fonts/static/RedHatText-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Bold";
+    src: url(../fonts/static/RedHatText-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Semi-Bold";
+    src: url(../fonts/static/RedHatText-SemiBold.ttf);
+}
+
+body {
+    overflow-x: hidden;
+    overflow-x: clip;
+    font-family: "Regular";
+}
+
+.addCartBtn {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    width: 50%;
+}
+
+.imageHolder {
+    aspect-ratio: 16/9;
+}
+
+@media screen and (min-width: 520px) {
+    .imageHolder {
+        aspect-ratio: 10/8;
+    }
+}
