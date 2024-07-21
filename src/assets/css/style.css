@@ -13,10 +13,15 @@
     src: url(../fonts/static/RedHatText-SemiBold.ttf);
 }
 
+:root{
+    --orange: #C83B0E;
+}
+
 body {
     overflow-x: hidden;
     overflow-x: clip;
     font-family: "Regular";
+    background-color: hsl(0, 5%, 92%);
 }
 
 .addCartBtn {
@@ -32,6 +37,38 @@ body {
 
 .imageHolder {
     aspect-ratio: 16/9;
+}
+
+.color-orange {
+    color: var(--orange);
+}
+
+.bg-color-orange {
+    background-color: var(--orange);
+}
+
+.bold-red-head {
+    font-family: "Bold";
+}
+
+.semi-bold-red-head {
+    font-family: "Semi-Bold";
+}
+
+.flex-shrink-0 {
+    flex-shrink: 0;
+}
+
+.cake-color {
+    color: #8d706d;
+}
+
+.remove-item-color {
+    border-color: #CAAFA7;
+}
+
+.dark-white-bg-color {
+    background-color: hsl(0, 5%, 92%);
 }
 
 @media screen and (min-width: 520px) {
