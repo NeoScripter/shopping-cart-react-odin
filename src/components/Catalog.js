@@ -5,7 +5,7 @@ import { useCart } from "../hooks/CartContext";
 function Catalog() {
     const { cart, updateItemQuantity } = useCart();
     const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-    const [itemsToShow, setItemsToShow] = useState(2);
+    const [itemsToShow, setItemsToShow] = useState(window.innerWidth < 540 ? 2 : 20);
 
     const loadMoreItems = () => {
         setItemsToShow((prevItemsToShow) => prevItemsToShow + 2);
