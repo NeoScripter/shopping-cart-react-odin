@@ -82,8 +82,8 @@ function Popup({ items, hidePopup }) {
     const { emptyCart } = useCart();
     let totalPrice = items.reduce((acc, item) => acc + item.quantity * item.price, 0);
     return (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="bg-white rounded-2xl p-4 md:p-8 w-full max-w-lg">
+        <div className="fixed overflow-y-auto inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="absolute top-0 bg-white rounded-2xl p-4 md:p-8 w-full max-w-lg">
                 <img className="mb-4 mt-2" src={orderConfirmed} alt="green tick surrounded by green circle"/>
                 <h4 className="bold-red-head text-4xl mb-2">Order confirmed</h4>
                 <p className="text-gray-400 semi-bold-red-head mb-6">We hope you enjoy your food!</p>
