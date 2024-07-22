@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
   const updateItemQuantity = (itemId, newQuantity) => {
     setCart(prevCart => 
       prevCart.map(item =>
-        item.id === itemId ? { ...item, quantity: item.quantity + newQuantity } : item
+        item.id === itemId ? { ...item, quantity: Math.max(0, item.quantity + newQuantity) } : item
       )
     );
   };

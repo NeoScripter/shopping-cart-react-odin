@@ -50,6 +50,10 @@ body {
     background-color: #de4d1c;
 }
 
+.selected-item {
+    outline: 3px solid var(--orange);
+}
+
 .bold-red-head {
     font-family: "Bold";
 }
