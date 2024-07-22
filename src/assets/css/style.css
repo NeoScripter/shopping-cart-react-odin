@@ -46,6 +46,9 @@ body {
 .bg-color-orange {
     background-color: var(--orange);
 }
+.bg-color-orange:is(:hover, :active, :focus-visible) {
+    background-color: #de4d1c;
+}
 
 .bold-red-head {
     font-family: "Bold";
