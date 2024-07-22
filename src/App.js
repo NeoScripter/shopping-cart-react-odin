@@ -9,7 +9,7 @@ function App() {
 
   return (
     <CartProvider>
-      <div className="md:flex gap-4 p-4 max-w-7xl mx-auto items-start">
+      <div className="tablet:flex gap-4 p-4 max-w-7xl mx-auto items-start">
         <Catalog />
         <Cart />
       </div>

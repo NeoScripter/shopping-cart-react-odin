@@ -24,6 +24,14 @@ export const CartProvider = ({ children }) => {
     );
   };
 
+  const emptyCart = () => {
+    setCart(prevCart => 
+      prevCart.map(item =>
+      ({ ...item, quantity: 0 })
+      )
+    );
+  };
+
   const extractAddedItems = useCallback(() => {
     let totalItems = 0;
     const addedItems = [];
@@ -37,7 +45,7 @@ export const CartProvider = ({ children }) => {
   }, [cart]);
 
   return (
-    <CartContext.Provider value={{ cart, setCart, updateItemQuantity, extractAddedItems, removeItemFromCart }}>
+    <CartContext.Provider value={{ cart, setCart, updateItemQuantity, extractAddedItems, removeItemFromCart, emptyCart }}>
       {children}
     </CartContext.Provider>
   );
